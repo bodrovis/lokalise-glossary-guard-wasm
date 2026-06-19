@@ -1,5 +1,7 @@
 # Browser WASM bindings for Lokalise Glossary Guard
 
+![NPM Version](https://img.shields.io/npm/v/lokalise-glossary-guard-wasm)
+
 [Lokalise Glossary Guard](github.com/bodrovis/lokalise-glossary-guard) bindings for browser. Used in the [web version of LGG](https://github.com/bodrovis/lokalise-glossary-guard-web).
 
 Validate a glossary CSV in the browser:

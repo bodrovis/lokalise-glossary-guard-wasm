@@ -19,7 +19,6 @@
 		"build:ts": "tsdown",
 		"fetch:wasm": "node scripts/fetch-wasm.mjs",
 		"build": "npm run build:ts && npm run fetch:wasm",
-		"prepack": "npm run build",
 		"lint": "biome check ./",
 		"lint:fix": "biome check --write ./",
 		"lint:fix:unsafe": "biome check --write --unsafe ./"
