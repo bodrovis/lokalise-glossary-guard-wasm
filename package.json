@@ -1,0 +1,47 @@
+{
+	"name": "lokalise-glossary-guard-wasm",
+	"version": "1.0.0",
+	"description": "Browser WASM bindings for Lokalise Glossary Guard",
+	"type": "module",
+	"types": "./dist/index.d.mts",
+	"exports": {
+		".": {
+			"types": "./dist/index.d.mts",
+			"import": "./dist/index.mjs"
+		},
+		"./lokalise-glossary-guard.wasm": "./dist/lokalise-glossary-guard.wasm",
+		"./wasm_exec.js": "./dist/wasm_exec.js"
+	},
+	"files": [
+		"dist"
+	],
+	"scripts": {
+		"build:ts": "tsdown",
+		"fetch:wasm": "node scripts/fetch-wasm.mjs",
+		"build": "npm run build:ts && npm run fetch:wasm",
+		"prepack": "npm run build",
+		"lint": "biome check ./",
+		"lint:fix": "biome check --write ./",
+		"lint:fix:unsafe": "biome check --write --unsafe ./"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "^2.0.6",
+		"@types/node": "^25.0.3",
+		"typescript": "^6.0.2",
+		"adm-zip": "^0.5.16",
+		"tsdown": "^0.22.0"
+	},
+	"sideEffects": false,
+	"license": "BSD-3-Clause",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/bodrovis/lokalise-glossary-guard-wasm.git"
+	},
+	"bugs": {
+		"url": "https://github.com/bodrovis/lokalise-glossary-guard-wasm/issues"
+	},
+	"publishConfig": {
+		"access": "public"
+	},
+	"author": "Ilya Krukowski"
+}
