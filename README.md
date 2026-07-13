@@ -1,6 +1,7 @@
 # Browser WASM bindings for Lokalise Glossary Guard
 
 ![NPM Version](https://img.shields.io/npm/v/lokalise-glossary-guard-wasm)
+![CI](https://github.com/bodrovis/lokalise-glossary-guard-wasm/actions/workflows/ci.yml/badge.svg)
 
 [Lokalise Glossary Guard](github.com/bodrovis/lokalise-glossary-guard) bindings for browser. Used in the [web version of LGG](https://github.com/bodrovis/lokalise-glossary-guard-web).
 
