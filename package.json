@@ -1,6 +1,6 @@
 {
 	"name": "lokalise-glossary-guard-wasm",
-	"version": "1.0.1",
+	"version": "1.0.2",
 	"description": "Browser WASM bindings for Lokalise Glossary Guard",
 	"type": "module",
 	"types": "./dist/index.d.mts",
