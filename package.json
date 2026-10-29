@@ -24,7 +24,8 @@
 		"prepack": "npm run build && npm test",
 		"lint": "biome check ./",
 		"lint:fix": "biome check --write ./",
-		"lint:fix:unsafe": "biome check --write --unsafe ./"
+		"lint:fix:unsafe": "biome check --write --unsafe ./",
+		"typecheck": "tsc -p tsconfig.test.json --noEmit"
 	},
 	"devDependencies": {
 		"@biomejs/biome": "^2.0.6",
