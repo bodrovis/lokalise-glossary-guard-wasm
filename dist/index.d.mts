@@ -1,4 +1,3 @@
-//#region src/types.d.ts
 type ValidateRequest = {
   path?: string;
   data: string;
@@ -65,12 +64,7 @@ declare global {
     validateGlossaryGuard?: (input: ValidateRequest) => string;
   }
 }
-//#endregion
-//#region src/init.d.ts
-declare function initGuardWasm(options?: GuardWasmInitOptions): Promise<void>;
-//#endregion
-//#region src/validate.d.ts
-declare function validateGlossary(req: ValidateRequest, options?: GuardWasmInitOptions): Promise<WasmValidateEnvelope>;
-//#endregion
-export { type GoWasmInstance, type GuardWasmInitOptions, type Outcome, type OutcomeStatus, type Summary, type ValidateRequest, type ValidateResponse, type ValidateStatus, type WasmValidateEnvelope, initGuardWasm, validateGlossary };
+export declare function initGuardWasm(options?: GuardWasmInitOptions): Promise<void>;
+export declare function validateGlossary(req: ValidateRequest, options?: GuardWasmInitOptions): Promise<WasmValidateEnvelope>;
+export type { GoWasmInstance, GuardWasmInitOptions, Outcome, OutcomeStatus, Summary, ValidateRequest, ValidateResponse, ValidateStatus, WasmValidateEnvelope };
 //# sourceMappingURL=index.d.mts.map

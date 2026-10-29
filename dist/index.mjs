@@ -1,17 +1,15 @@
-//#region src/const.ts
+// src/const.ts
 const defaultWasmUrl = new URL("./lokalise-glossary-guard.wasm", import.meta.url);
 const defaultWasmExecUrl = new URL("./wasm_exec.js", import.meta.url);
 
-//#endregion
-//#region src/env.ts
+// src/env.ts
 function assertBrowserEnvironment() {
 	if (typeof window === "undefined" || typeof document === "undefined") throw new Error("Lokalise Glossary Guard WASM can only be initialized in a browser environment");
 	if (typeof WebAssembly === "undefined") throw new Error("WebAssembly is not supported in this environment");
 	if (typeof fetch === "undefined") throw new Error("fetch is not available in this environment");
 }
 
-//#endregion
-//#region src/instantiate.ts
+// src/instantiate.ts
 async function instantiateWasm(src, importObject) {
 	const response = await fetch(src);
 	if (!response.ok) throw new Error(`Failed to fetch ${src}: ${response.status} ${response.statusText}`);
@@ -23,8 +21,7 @@ async function instantiateWasm(src, importObject) {
 	return (await WebAssembly.instantiate(bytes, importObject)).instance;
 }
 
-//#endregion
-//#region src/wasmExec.ts
+// src/wasmExec.ts
 let wasmExecPromise = null;
 function loadWasmExec(src) {
 	if (window.Go) return Promise.resolve();
@@ -45,8 +42,7 @@ function loadWasmExec(src) {
 	return wasmExecPromise;
 }
 
-//#endregion
-//#region src/init.ts
+// src/init.ts
 let readyPromise = null;
 function initGuardWasm(options = {}) {
 	if (readyPromise) return readyPromise;
@@ -69,8 +65,7 @@ async function initGuardWasmOnce(options) {
 	if (!window.validateGlossaryGuard) throw new Error("validateGlossaryGuard was not registered by WASM");
 }
 
-//#endregion
-//#region src/validate.ts
+// src/validate.ts
 async function validateGlossary(req, options = {}) {
 	await initGuardWasm(options);
 	const validateFn = window.validateGlossaryGuard;
@@ -87,6 +82,5 @@ function stringifyError(err) {
 	return String(err);
 }
 
-//#endregion
 export { initGuardWasm, validateGlossary };
 //# sourceMappingURL=index.mjs.map
